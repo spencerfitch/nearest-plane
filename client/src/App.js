@@ -8,7 +8,8 @@ class App extends React.Component {
         super (props);
         this.state = {
             "lat": null,
-            "lon": null
+            "lon": null,
+            "nearest": null
         }
         this.locationSuccess = this.locationSuccess.bind(this);
     }
@@ -19,6 +20,13 @@ class App extends React.Component {
                 <h2>Current Location</h2>
                 <p><b>Latitude:</b>  {this.state.lat}</p>
                 <p><b>Longitude:</b> {this.state.lon}</p>
+                <br/>
+                <p><b>Plane Information:</b> 
+                    <br/>
+                    <pre>
+                        {(this.state.nearest) ? JSON.stringify(this.state.nearest, null, 2) : null}
+                    </pre>
+                </p>
             </div>
         )
     }
@@ -28,7 +36,9 @@ class App extends React.Component {
             fetch(`${baseUrl}/nearest?lat=${this.state.lat}&lon=${this.state.lon}`)
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data);
+                    this.setState({
+                        "nearest": data
+                    })
                 })
         }
     }
