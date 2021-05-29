@@ -80,21 +80,6 @@ const argMin = (arr, func) => {
             .reduce((acc, curr) => (acc[0] < curr[0] ? acc : curr))[1];
 }
 
-const nearestPlane = (lat, lon) => {
-    /*
-    Communicate with the OpenSky API to find the nearest plane
-
-    Arguments:
-        lat - Latitude position of interest
-        lon - Longitude position of interest
-    Returns:
-        nearst (JSON) - information about the nearest plane
-    */
-
-   
-
-}
-
 router.route("/nearest")
     .get((req, res) => {
         console.log(`GET /nearest?lat=${req.query.lat}&lon=${req.query.lon}`);
@@ -136,12 +121,14 @@ router.route("/nearest")
             let lomax = Math.min(lon+searchRadius, 180);
             return `lamin=${lamin}&lomin=${lomin}&lamax=${lamax}&lomax=${lomax}`;
         }
+        // Make request to openSky API
         openSky.get(`/states/all?${latlonString()}`)
             .then(response => response.data)
             .then(data => {
                 let states = data.states;
                 const dist = (state) => Math.sqrt((state[5]-lon)**2 + (state[6]-lat)**2);
                 
+                // Transfer array data to JSON response
                 const nearest = states[argMin(states, dist)];
                 const body = {
                     icao24: nearest[0],
