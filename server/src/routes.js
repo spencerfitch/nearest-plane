@@ -1,11 +1,12 @@
 "use strict";
 
+require('dotenv').config();
 const express = require("express");
 const axios = require("axios");
 const axiosRetry = require('axios-retry');
 const router = express.Router();
 
-const openSky = axios.create({baseURL: "https://opensky-network.org/api" });
+const openSky = axios.create({baseURL:  process.env.BASE_URL});
 
 router.route("/")
     .get((req, res) => {
@@ -102,6 +103,7 @@ router.route("/nearest")
         // Reject promise if empty states array returned
         //      - Result of search radius being too narrow
         openSky.interceptors.response.use((response) => {
+            console.log(response);
             if (response.data.states.length == 0) {
                 searchRadius = searchRadius*2;
                 return Promise.reject();
@@ -153,7 +155,7 @@ router.route("/nearest")
                 return;
             })
             .catch(err => {
-                console.log("Error in reques to to OpenSky:\n"+err);
+                console.log("Error in request to OpenSky:\n"+err);
             })            
     })
 
