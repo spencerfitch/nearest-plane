@@ -20,7 +20,7 @@ class App extends React.Component {
     render () {
         return (
             <Router>
-                <div>
+                <div className="vh-100 d-flex flex-column">
                     <Navigation />
                     
                     <Switch>
@@ -34,7 +34,6 @@ class App extends React.Component {
                             <Home />
                         </Route>
 
-                        
                     </Switch>
                 </div>
             </Router>
