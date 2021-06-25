@@ -1,0 +1,16 @@
+// Import core functions
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+// Modify colors
+$theme-colors: (
+    primary: #F24C00,
+    secondary: #FFED66,
+    info: #F7717D,
+    light: #E1E5EE,
+    dark: #2A324B
+);
+
+// Import full bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
