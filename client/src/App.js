@@ -20,9 +20,9 @@ class App extends React.Component {
     render () {
         return (
             <Router>
-                <div className="vh-100 d-flex flex-column">
+                <div className="vh-100 d-flex flex-column bg-light">
                     <Navigation />
-                    
+
                     <Switch>
                         <Route exact path="/">
                             <Home />
