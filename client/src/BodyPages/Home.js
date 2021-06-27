@@ -1,11 +1,13 @@
 import React from 'react';
 import {Container, Row} from 'react-bootstrap';
 
+import PlaneAnimation from './PlaneAnimation';
+
 class Home extends React.Component {
     render () {
         return (
         <Container fluid className="h-100 d-flex align-items-center">
-            <Row className="w-100">
+            <Row className="w-100" style={{zIndex: 1}}>
                 <Row className="align-items-center">
                     <h4 className="text-center">Welcome to Nearest Plane!</h4>
                     <p className="w-75 text-center m-auto mb-5">
@@ -23,6 +25,7 @@ class Home extends React.Component {
                 </Row>
 
             </Row>
+            <PlaneAnimation />
         </Container>
         )
     }

@@ -7,7 +7,7 @@ import { FaPlane } from 'react-icons/fa';
 class Navigation extends React.Component {
     render() {
         return (
-        <Navbar bg="white" variant="light">
+        <Navbar bg="white" variant="light" style={{zIndex: 1}}>
             <Container fluid>
                 <Navbar.Brand href="/" className="d-flex align-items-center">
                     <IconContext.Provider value={{className: 'text-primary', size: '30', style: {marginRight: "5px"}}}>
