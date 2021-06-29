@@ -1,5 +1,6 @@
 import React from 'react';
-import {Container} from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+import Map from '../Components/Map';
 
 
 const baseUrl = "http://localhost:8081"
@@ -10,7 +11,7 @@ class Nearest extends React.Component {
 
         this.state = {
             lat: null,
-            lon: null,
+            lng: null,
             nearest: null
         };
 
@@ -18,18 +19,25 @@ class Nearest extends React.Component {
     }
     render () {
         return (
-        <Container fluid>
-            <h2>Current Location</h2>
-            <p><b>Latitude:</b>  {this.state.lat}</p>
-            <p><b>Longitude:</b> {this.state.lon}</p>
-            <br/>
-            <div>
-                <h2>Plane Information:</h2> 
-                <pre>
-                    {(this.state.nearest) ? JSON.stringify(this.state.nearest, null, 2) : null}
-                </pre>
-            </div>
-        </Container>
+        <div className="bg-light">
+            <Map 
+                lat={this.state.lat}
+                lng={this.state.lng}
+                plane={this.state.nearest}/>
+            <Container fluid>
+                <h2>Current Location</h2>
+                <p><b>Latitude:</b>  {this.state.lat}</p>
+                <p><b>Longitude:</b> {this.state.lng}</p>
+                <br/>
+                <div>
+                    <h2>Plane Information:</h2> 
+                    <pre>
+                        {(this.state.nearest) ? JSON.stringify(this.state.nearest, null, 2) : null}
+                    </pre>
+                </div>
+                
+            </Container>
+        </div>
         )
     }
 
@@ -47,7 +55,7 @@ class Nearest extends React.Component {
             .then(data => {
                 this.setState({
                     lat: position.coords.latitude,
-                    lon: position.coords.longitude,
+                    lng: position.coords.longitude,
                     nearest: data
                 })
             });
