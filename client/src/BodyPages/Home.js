@@ -4,7 +4,7 @@ import { Container, Row } from 'react-bootstrap';
 import { IconContext } from 'react-icons/lib';
 import { BsExclamationCircle } from 'react-icons/bs';
 
-import PlaneAnimation from './PlaneAnimation';
+import PlaneAnimation from '../Components/PlaneAnimation';
 
 class Home extends React.Component {
     render () {
