@@ -1,5 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+
+import NearestLoading from '../Components/NearestLoading';
 import Map from '../Components/Map';
 
 
@@ -18,6 +20,8 @@ class Nearest extends React.Component {
         this.locationSuccess = this.locationSuccess.bind(this);
     }
     render () {
+        if (!this.state.nearest) return (<NearestLoading />);
+
         return (
         <div className="bg-light">
             <Map 

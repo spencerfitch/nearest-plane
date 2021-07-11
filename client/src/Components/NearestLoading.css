@@ -1,0 +1,32 @@
+
+.planePath {
+    margin: auto;
+    padding: 0px;
+    width: 120px;
+    height: 120px;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.planeLoading {
+    padding: 0px;
+    width: 30px;
+    height: 30px;
+    color: #F24C00;
+    animation: circle 2s linear infinite;
+}
+
+@keyframes circle{
+    0%{
+        transform: 
+            rotate(-180deg)
+            translate(0px, -58px);
+    }
+    100%{
+        transform:
+            rotate(180deg)
+            translate(0px, -58px);
+    }
+}
