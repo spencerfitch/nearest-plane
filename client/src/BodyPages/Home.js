@@ -15,9 +15,6 @@ class Home extends React.Component {
                     <h4 className="text-center fs-1">Welcome to Nearest Plane</h4>
                     <p className="w-100 text-center m-auto mb-5 fs-4">
                         Discover the world of airplanes flying right over your head
-                        <br/>
-                        
-
                     </p>
                 </Row>
                 <Row className="mt-3">
