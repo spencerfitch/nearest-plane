@@ -103,7 +103,6 @@ router.route("/nearest")
         // Reject promise if empty states array returned
         //      - Result of search radius being too narrow
         openSky.interceptors.response.use((response) => {
-            console.log(response);
             if (response.data.states.length == 0) {
                 searchRadius = searchRadius*2;
                 return Promise.reject();
