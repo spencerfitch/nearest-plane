@@ -76,7 +76,7 @@ const Utils = function () {
      * Convert OpenSky Plane State array to a JSON object
      * 
      * @param {Array} arr Array state for single plane
-     * @returns {Object} Object of 
+     * @returns {Object} Object of plane state information
      */
     this.jsonifyPlaneState = (arr) => ({
         icao24: arr[0],
@@ -95,7 +95,7 @@ const Utils = function () {
         geo_altitude: arr[13],
         squawk: arr[14],
         spi: arr[15],
-        position_source: arr[16]
+        position_source: ['ADS-B', 'ASTERIX', 'MLAT'][arr[16]]
     })
 
     /**
