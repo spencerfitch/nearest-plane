@@ -17,7 +17,7 @@ class NotFound extends React.Component {
                     </span>
                 </Container>
                 <p className="text-center">
-                    We can't find {window.location.pathname} on this website. <span className="fw-light">That's all we know.</span>
+                    We can't find "{window.location.pathname}" on this website. <span className="fw-light">That's all we know.</span>
                     <br/>
                     Use the navigation bar above to go to one of our other pages.
                 </p>
