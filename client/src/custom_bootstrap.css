@@ -10452,5 +10452,17 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+::-webkit-scrollbar {
+  width: 8px;
+}
 
-/*# sourceMappingURL=index.css.map */
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=custom_bootstrap.css.map */
