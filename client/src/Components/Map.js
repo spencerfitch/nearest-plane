@@ -20,7 +20,7 @@ class Map extends React.Component {
             bootstrapURLKeys={{key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY}}
             center={{lat: this.props.lat, lng: this.props.lng}}
             defaultZoom={10}
-            style={{ height: "300px", width: "100%", position: 'relative'}}
+            style={{ height: "100%", width: "100%", position: 'relative'}}
             yesIWantToUseGoogleMapApiInternals
             onGoogleApiLoaded={({map, maps}) => this.mapLoaded(map, maps)}>
                 
