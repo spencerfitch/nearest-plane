@@ -1,10 +1,11 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
 
 import NearestLoading from '../Components/NearestLoading';
 import NearestError from '../Components/NearestError';
 import Map from '../Components/Map';
 import PlaneInformation from '../Components/PlaneInformation';
+
+import './Nearest.css';
 
 
 const baseUrl = "http://localhost:8081"
@@ -28,26 +29,15 @@ class Nearest extends React.Component {
         if (!this.state.nearest) return (<NearestLoading />);
 
         return (
-        <div className="bg-light">
-            <Map 
-                lat={this.state.lat}
-                lng={this.state.lng}
-                plane={this.state.nearest}/>
-            <Container fluid>
-                <h2>Current Location</h2>
-                <p><b>Latitude:</b>  {this.state.lat}</p>
-                <p><b>Longitude:</b> {this.state.lng}</p>
-                <br/>
-                <div>
-                    <h2>Plane Information:</h2> 
-                    <pre>
-                        {(this.state.nearest) ? JSON.stringify(this.state.nearest, null, 2) : null}
-                    </pre>
-                    <PlaneInformation
-                        plane={this.state.nearest} />
-                </div>
-                
-            </Container>
+        <div className="bg-light nearestContainer">
+            <div className="nearestMap">
+                <Map 
+                    lat={this.state.lat}
+                    lng={this.state.lng}
+                    plane={this.state.nearest}/>
+            </div>
+            <PlaneInformation
+                plane={this.state.nearest} />
         </div>
         )
     }
