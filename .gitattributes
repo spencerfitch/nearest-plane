@@ -1,0 +1,2 @@
+# Ignore generated Bootstrap CSS in linguist calculations
+client/src/custom_bootstrap.css linguist-vendored
