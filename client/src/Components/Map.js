@@ -9,7 +9,7 @@ class Map extends React.Component {
         super(props)
 
         this.state = {
-            pins: [],
+            markers: [],
             loaded: false
         }
     }
@@ -22,16 +22,16 @@ class Map extends React.Component {
             defaultZoom={10}
             style={{ height: "100%", width: "100%", position: 'relative'}}
             yesIWantToUseGoogleMapApiInternals
-            onGoogleApiLoaded={({map, maps}) => this.mapLoaded(map, maps)}>
-                
-            {(this.state.loaded) ? this.state.pins : null}
+            onGoogleApiLoaded={({map, maps}) => this.mapLoaded(map, maps)}
+        >        
+            {(this.state.loaded) ? this.state.markers : null}
         </GoogleMapReact>
         )
     }
 
     mapLoaded(map, maps) {
         this.setState({
-            pins: this.getMapPins(),
+            markers: this.buildMapMarkers(),
             loaded: true
         })
     }
@@ -44,46 +44,69 @@ class Map extends React.Component {
         }
 
         this.setState({
-            pins: this.getMapPins()
+            markers: this.buildMapMarkers()
         });
     }
 
-    getMapPins() {
-        const newPins = [];
+    buildMapMarkers() {
+        const newMarkers = [];
 
-        newPins.push(
-            <LocationPin 
+        newMarkers.push(
+            <LocationMarker
                 lat={this.props.lat}
                 lng={this.props.lng}
-                key={0}/>)
-
+                key={0}
+            />
+            )
         if (this.props.plane) {
-            newPins.push(
-                <PlanePin
+            newMarkers.push(
+                <PlaneMarker
                     lat={this.props.plane.latitude} 
                     lng={this.props.plane.longitude}
                     track={this.props.plane.true_track}
-                    key={1}/>
+                    key={1}
+                />
             )
         }
-
-        return newPins;
+        
+        return newMarkers;
     }
 
 }
 
-const LocationPin = () => (
-    <div className="d-flex align-items-center fw-bold" style={{width: "180px"}}>
-        <IoLocationSharp className="text-primary" size={20}/>
+
+const LocationMarker = () => (
+    <div 
+        style={{
+            width: "180px",
+            transform: 'translate(-5.5%, -98%)',
+            fontWeight: 'bold'
+        }}
+    >
+        <IoLocationSharp 
+            className="text-primary" 
+            size={20}
+        />
         Your Location
     </div>
 )
 
-const PlanePin = ({ track }) => (
-    <div className="d-flex align-items-center fw-bold" style={{width: "180px"}}>
-        <FaPlane className="text-primary" size={20} style={{transform: `rotate(${track-90}deg)`}}/>
+const PlaneMarker = ({ track }) => (
+    <div 
+        style={{
+            width: "180px",
+            transform: 'translate(-5.5%, -50%)',
+            fontWeight: 'bold'
+        }}
+    >
+        <FaPlane 
+            className="text-primary" 
+            size={20} 
+            style={{transform: `rotate(${track-90}deg)`}}
+        />
         Nearest Plane
     </div>
 )
+
 
 export default Map;
