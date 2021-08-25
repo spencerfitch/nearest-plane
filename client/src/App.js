@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {HashRouter as Router, Switch, Route} from 'react-router-dom';
 
 import Navigation from './Navigation';
 import Home from './BodyPages/Home';
@@ -19,7 +19,7 @@ class App extends React.Component {
 
     render () {
         return (
-            <Router>
+            <Router hashType="slash" basename="">
                 <div className="vh-100 d-flex flex-column bg-light">
                     <Navigation />
 
@@ -36,8 +36,8 @@ class App extends React.Component {
                         <Route path="*">
                             <NotFound />
                         </Route>
-
                     </Switch>
+
                 </div>
             </Router>
             

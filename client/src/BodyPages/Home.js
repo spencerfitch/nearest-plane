@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import { IconContext } from 'react-icons/lib';
 import { BsExclamationCircle } from 'react-icons/bs';
@@ -18,9 +19,9 @@ class Home extends React.Component {
                     </p>
                 </Row>
                 <Row className="mt-3">
-                    <a href="/nearest" className="btn btn-primary w-50 m-auto btn-lg text-white">
+                    <Link to="/nearest" className="btn btn-primary w-50 m-auto btn-lg text-white">
                         Find your Nearest Plane
-                    </a>
+                    </Link>
                     <Container fluid className="d-flex align-items-center justify-content-center">
                         <IconContext.Provider value={{className:'fw-light', size: 15, style:{marginRight: '3px'}}}>
                             
