@@ -1,15 +1,30 @@
 {
-  "short_name": "Closest Plane",
-  "name": "Closest Plane",
+  "short_name": "Nearest Plane",
+  "name": "Nearest Plane",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "48x48",
+      "sizes": "48x48 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#F24C00",
+  "theme_color": "#FF4F00",
   "background_color": "#E1E5EE"
 }
