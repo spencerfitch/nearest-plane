@@ -2,8 +2,8 @@
 .planePath {
     margin: auto;
     padding: 0px;
-    width: 120px;
-    height: 120px;
+    width: 12em;
+    height: 12em;
     border: 2px solid white;
     border-radius: 50%;
     display: flex;
@@ -12,8 +12,8 @@
 }
 .planeLoading {
     padding: 0px;
-    width: 30px;
-    height: 30px;
+    width: 2.5em;
+    height: 2.5em;
     color: #F24C00;
     animation: circle 2s linear infinite;
 }
@@ -22,11 +22,11 @@
     0%{
         transform: 
             rotate(-180deg)
-            translate(0px, -58px);
+            translate(0px, -5.9em);
     }
     100%{
         transform:
             rotate(180deg)
-            translate(0px, -58px);
+            translate(0px, -5.9em);
     }
 }

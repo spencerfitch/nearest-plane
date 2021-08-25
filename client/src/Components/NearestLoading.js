@@ -8,7 +8,7 @@ class NearestLoading extends React.Component {
     render() {
         return (
             <Container fluid className="h-100 d-flex align-items-center">
-                <Row className="w-100">
+                <Row className="w-100 mx-0 mb-5">
                     <div className="planePath">
                         <FaPlane className="planeLoading"/>
                     </div>
