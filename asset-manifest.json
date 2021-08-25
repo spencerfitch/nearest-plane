@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/nearest-plane/static/css/main.74a2e3f9.chunk.css",
-    "main.js": "/nearest-plane/static/js/main.e2eb915e.chunk.js",
-    "main.js.map": "/nearest-plane/static/js/main.e2eb915e.chunk.js.map",
-    "runtime-main.js": "/nearest-plane/static/js/runtime-main.373a09d8.js",
-    "runtime-main.js.map": "/nearest-plane/static/js/runtime-main.373a09d8.js.map",
-    "static/js/2.bb077e2b.chunk.js": "/nearest-plane/static/js/2.bb077e2b.chunk.js",
-    "static/js/2.bb077e2b.chunk.js.map": "/nearest-plane/static/js/2.bb077e2b.chunk.js.map",
-    "static/js/3.c01e5ca0.chunk.js": "/nearest-plane/static/js/3.c01e5ca0.chunk.js",
-    "static/js/3.c01e5ca0.chunk.js.map": "/nearest-plane/static/js/3.c01e5ca0.chunk.js.map",
-    "index.html": "/nearest-plane/index.html",
-    "static/css/main.74a2e3f9.chunk.css.map": "/nearest-plane/static/css/main.74a2e3f9.chunk.css.map",
-    "static/js/2.bb077e2b.chunk.js.LICENSE.txt": "/nearest-plane/static/js/2.bb077e2b.chunk.js.LICENSE.txt"
+    "main.css": "https://spencerfitch.github.io/nearest-plane/static/css/main.74a2e3f9.chunk.css",
+    "main.js": "https://spencerfitch.github.io/nearest-plane/static/js/main.70dd1cb0.chunk.js",
+    "main.js.map": "https://spencerfitch.github.io/nearest-plane/static/js/main.70dd1cb0.chunk.js.map",
+    "runtime-main.js": "https://spencerfitch.github.io/nearest-plane/static/js/runtime-main.bdf6615a.js",
+    "runtime-main.js.map": "https://spencerfitch.github.io/nearest-plane/static/js/runtime-main.bdf6615a.js.map",
+    "static/js/2.bb077e2b.chunk.js": "https://spencerfitch.github.io/nearest-plane/static/js/2.bb077e2b.chunk.js",
+    "static/js/2.bb077e2b.chunk.js.map": "https://spencerfitch.github.io/nearest-plane/static/js/2.bb077e2b.chunk.js.map",
+    "static/js/3.c01e5ca0.chunk.js": "https://spencerfitch.github.io/nearest-plane/static/js/3.c01e5ca0.chunk.js",
+    "static/js/3.c01e5ca0.chunk.js.map": "https://spencerfitch.github.io/nearest-plane/static/js/3.c01e5ca0.chunk.js.map",
+    "index.html": "https://spencerfitch.github.io/nearest-plane/index.html",
+    "static/css/main.74a2e3f9.chunk.css.map": "https://spencerfitch.github.io/nearest-plane/static/css/main.74a2e3f9.chunk.css.map",
+    "static/js/2.bb077e2b.chunk.js.LICENSE.txt": "https://spencerfitch.github.io/nearest-plane/static/js/2.bb077e2b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.373a09d8.js",
+    "static/js/runtime-main.bdf6615a.js",
     "static/js/2.bb077e2b.chunk.js",
     "static/css/main.74a2e3f9.chunk.css",
-    "static/js/main.e2eb915e.chunk.js"
+    "static/js/main.70dd1cb0.chunk.js"
   ]
 }
