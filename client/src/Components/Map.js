@@ -1,4 +1,5 @@
 import React from 'react';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 import GoogleMapReact from 'google-map-react';
 import { IoLocationSharp } from 'react-icons/io5';
 import { FaPlane } from 'react-icons/fa';
@@ -49,10 +50,12 @@ class Map extends React.Component {
     }
 
     buildMapMarkers() {
+        const markerSize = '2.25em';
         const newMarkers = [];
 
         newMarkers.push(
             <LocationMarker
+                size={markerSize}
                 lat={this.props.lat}
                 lng={this.props.lng}
                 key={0}
@@ -61,6 +64,7 @@ class Map extends React.Component {
         if (this.props.plane) {
             newMarkers.push(
                 <PlaneMarker
+                    size={markerSize}
                     lat={this.props.plane.latitude} 
                     lng={this.props.plane.longitude}
                     track={this.props.plane.true_track}
@@ -68,6 +72,8 @@ class Map extends React.Component {
                 />
             )
         }
+
+        
         
         return newMarkers;
     }
@@ -75,37 +81,51 @@ class Map extends React.Component {
 }
 
 
-const LocationMarker = () => (
-    <div 
+const IconMarker = ({ size, label, icon, transform }) => (
+    <div
         style={{
-            width: "180px",
-            transform: 'translate(-5.5%, -98%)',
-            fontWeight: 'bold'
+            width: (size) ? size : '1em',
+            height: (size) ? size : '1em',
+            transform: (transform) ? transform : 'translate(-50%, -50%)'
         }}
     >
-        <IoLocationSharp 
-            className="text-primary" 
-            size={20}
-        />
-        Your Location
+        <OverlayTrigger
+            placement='right'
+            delay={{ show: 150, hide: 300 }}
+            overlay={ <Tooltip>{label}</Tooltip>}
+        >
+            {icon}
+        </OverlayTrigger>
     </div>
 )
 
-const PlaneMarker = ({ track }) => (
-    <div 
-        style={{
-            width: "180px",
-            transform: 'translate(-5.5%, -50%)',
-            fontWeight: 'bold'
-        }}
-    >
-        <FaPlane 
-            className="text-primary" 
-            size={20} 
-            style={{transform: `rotate(${track-90}deg)`}}
-        />
-        Nearest Plane
-    </div>
+const LocationMarker = ({ size }) => (
+    <IconMarker
+        label='Your Location'
+        icon={
+            <IoLocationSharp
+                className='text-primary'
+                size={size}
+            />
+        }
+        size={size}
+        transform='translate(-50%, -95%)'
+    />
+)
+
+const PlaneMarker = ({ size, track }) => (
+    <IconMarker 
+        label='Nearest Plane'
+        icon={
+            <FaPlane
+                className='text-primary'
+                size={size}
+                style={{transform: `rotate(${track-90}deg)`}}
+            />
+        }
+        size={size}
+        transform='translate(-50%, -50%)'
+    />
 )
 
 
