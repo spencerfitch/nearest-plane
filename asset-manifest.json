@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/nearest-plane/static/css/main.3c9d5dcb.chunk.css",
+    "main.css": "/nearest-plane/static/css/main.f4296836.chunk.css",
     "main.js": "/nearest-plane/static/js/main.ba3d868b.chunk.js",
     "main.js.map": "/nearest-plane/static/js/main.ba3d868b.chunk.js.map",
     "runtime-main.js": "/nearest-plane/static/js/runtime-main.373a09d8.js",
@@ -10,13 +10,13 @@
     "static/js/3.c01e5ca0.chunk.js": "/nearest-plane/static/js/3.c01e5ca0.chunk.js",
     "static/js/3.c01e5ca0.chunk.js.map": "/nearest-plane/static/js/3.c01e5ca0.chunk.js.map",
     "index.html": "/nearest-plane/index.html",
-    "static/css/main.3c9d5dcb.chunk.css.map": "/nearest-plane/static/css/main.3c9d5dcb.chunk.css.map",
+    "static/css/main.f4296836.chunk.css.map": "/nearest-plane/static/css/main.f4296836.chunk.css.map",
     "static/js/2.918703e6.chunk.js.LICENSE.txt": "/nearest-plane/static/js/2.918703e6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.373a09d8.js",
     "static/js/2.918703e6.chunk.js",
-    "static/css/main.3c9d5dcb.chunk.css",
+    "static/css/main.f4296836.chunk.css",
     "static/js/main.ba3d868b.chunk.js"
   ]
 }
