@@ -19,7 +19,7 @@ class App extends React.Component {
 
     render () {
         return (
-            <Router hashType="slash" basename="">
+            <Router hashType="slash">
                 <div className="vh-100 d-flex flex-column bg-light">
                     <Navigation />
 
