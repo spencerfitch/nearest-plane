@@ -5,7 +5,7 @@ import { Container } from 'react-bootstrap'
 class About extends React.Component {
     render() {
         return (
-            <Container fluid style={{overflowY: 'auto', maxWidth: '900px'}}>
+            <Container fluid className='bg-light' style={{maxWidth: '900px'}}>
                 <h4 className="mt-4">What does Nearest Plane do?</h4>
                 <p>
                     Nearest Plane gives you real-time information about the plane that is closest to your current location. 
