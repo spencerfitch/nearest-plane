@@ -1,0 +1,15 @@
+{
+  "short_name": "Closest Plane",
+  "name": "Closest Plane",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#F24C00",
+  "background_color": "#E1E5EE"
+}
