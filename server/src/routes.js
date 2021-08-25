@@ -37,7 +37,7 @@ openSky.interceptors.response.use((response) => {
 })
 
 
-router.route("/nearest")
+router.route("/api/nearest")
     .get((req, res) => {
         console.log(`GET /nearest?lat=${req.query.lat}&lon=${req.query.lon}`);
 

@@ -8,7 +8,7 @@ import PlaneInformation from '../Components/PlaneInformation';
 import './Nearest.css';
 
 
-const baseUrl = "http://localhost:8081"
+const baseUrl = "http://localhost:8081/api"
 
 class Nearest extends React.Component {
     constructor (props) {
