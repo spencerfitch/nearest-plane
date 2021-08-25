@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/nearest-plane/static/css/main.3c9d5dcb.chunk.css",
-    "main.js": "/nearest-plane/static/js/main.386e52a4.chunk.js",
-    "main.js.map": "/nearest-plane/static/js/main.386e52a4.chunk.js.map",
+    "main.js": "/nearest-plane/static/js/main.ba3d868b.chunk.js",
+    "main.js.map": "/nearest-plane/static/js/main.ba3d868b.chunk.js.map",
     "runtime-main.js": "/nearest-plane/static/js/runtime-main.373a09d8.js",
     "runtime-main.js.map": "/nearest-plane/static/js/runtime-main.373a09d8.js.map",
     "static/js/2.918703e6.chunk.js": "/nearest-plane/static/js/2.918703e6.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.373a09d8.js",
     "static/js/2.918703e6.chunk.js",
     "static/css/main.3c9d5dcb.chunk.css",
-    "static/js/main.386e52a4.chunk.js"
+    "static/js/main.ba3d868b.chunk.js"
   ]
 }
