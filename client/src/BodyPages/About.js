@@ -21,7 +21,7 @@ class About extends React.Component {
                     In more technical terms, the React front-end (that you're looking at right now) sends a request with your location
                     to a Node.js back-end server. That Node.js server then validates the request from the front-end
                     and makes a request to the OpenSky API asking for information about aircraft in your area. Once the
-                    Node.js server gets a response back from OpenSky, it packages determines the closest plane to your location, repackages that plane's information, and sends it on to the React front-end
+                    Node.js server gets a response back from OpenSky, it determines the closest plane to your location, repackages that plane's information, and sends it on to the React front-end
                     where it can be interepreted and displayed for you to enjoy. If you still want to learn more, check out
                     the <a href="https://github.com/s-fitch/nearest-plane">Nearest Plane GitHub</a>.
                 </p>
