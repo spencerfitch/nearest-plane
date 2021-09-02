@@ -1,5 +1,5 @@
 
-.planePath {
+.plane-path {
     margin: auto;
     padding: 0px;
     width: 12em;
@@ -10,7 +10,7 @@
     align-items: center;
     justify-content: center;
 }
-.planeLoading {
+.plane-loading {
     padding: 0px;
     width: 2.5em;
     height: 2.5em;

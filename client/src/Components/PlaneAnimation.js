@@ -8,7 +8,7 @@ class PlaneAnimation extends React.Component {
     render () {       
         const planes = [...Array(10).keys()].map(i => <FaPlane className="plane" key={i}/>);
         return (
-            <ul className="planeContainer">
+            <ul className="plane-container">
                 {planes}
             </ul>
         )

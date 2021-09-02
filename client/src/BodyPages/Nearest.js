@@ -30,8 +30,8 @@ class Nearest extends React.Component {
         if (!this.state.nearest) return (<NearestLoading />);
 
         return (
-        <div className="bg-light nearestContainer">
-            <div className="nearestMap">
+        <div className="bg-light nearest-container">
+            <div className="nearest-map">
                 <Map 
                     lat={this.state.lat}
                     lng={this.state.lng}

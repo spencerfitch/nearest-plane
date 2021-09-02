@@ -9,8 +9,8 @@ class NearestLoading extends React.Component {
         return (
             <Container fluid className="h-100 d-flex align-items-center">
                 <Row className="w-100 mx-0 mb-5">
-                    <div className="planePath">
-                        <FaPlane className="planeLoading"/>
+                    <div className="plane-path">
+                        <FaPlane className="plane-loading"/>
                     </div>
                     <h4 className='text-center mt-2'>
                         Locating nearest plane...
