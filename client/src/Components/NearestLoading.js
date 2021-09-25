@@ -2,7 +2,7 @@ import React from 'react';
 import { Container,Row } from 'react-bootstrap';
 import { FaPlane } from 'react-icons/fa';
 
-import './NearestLoading.css'
+import '../styles/NearestLoading.css'
 
 class NearestLoading extends React.Component {
     render() {

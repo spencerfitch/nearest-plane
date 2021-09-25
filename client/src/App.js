@@ -1,11 +1,10 @@
-import React from 'react';
 import {HashRouter as Router, Switch, Route} from 'react-router-dom';
-
-import Navigation from './Navigation';
-import Home from './BodyPages/Home';
-import About from './BodyPages/About';
-import Nearest from './BodyPages/Nearest';
-import NotFound from './BodyPages/NotFound';
+import './styles/custom_bootstrap.css'
+import Navigation from './components/Navigation';
+import Home from './pages/Home';
+import About from './pages/About';
+import Nearest from './pages/Nearest';
+import NotFound from './pages/NotFound';
 
 const App = () => (
   <Router hashType="slash">

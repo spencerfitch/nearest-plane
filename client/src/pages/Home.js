@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { IconContext } from 'react-icons/lib';
 import { BsExclamationCircle } from 'react-icons/bs';
 
-import PlaneAnimation from '../Components/PlaneAnimation';
+import PlaneAnimation from '../components/PlaneAnimation';
 
 class Home extends React.Component {
     render () {

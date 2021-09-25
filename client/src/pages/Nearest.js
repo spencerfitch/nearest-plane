@@ -1,11 +1,11 @@
 import React from 'react';
 
-import NearestLoading from '../Components/NearestLoading';
-import NearestError from '../Components/NearestError';
-import Map from '../Components/Map';
-import PlaneInformation from '../Components/PlaneInformation';
+import NearestLoading from '../components/NearestLoading';
+import NearestError from '../components/NearestError';
+import Map from '../components/Map';
+import PlaneInformation from '../components/PlaneInformation';
 
-import './Nearest.css';
+import '../styles/Nearest.css';
 
 
 //const baseUrl = "http://localhost:8081/api"
