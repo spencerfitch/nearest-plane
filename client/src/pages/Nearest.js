@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Loading from '../components/loading';
-import NearestError from '../components/error';
+import Error from '../components/error';
 import Map from '../components/map';
 import PlaneInformation from '../components/plane-information';
 
@@ -26,7 +26,7 @@ class Nearest extends React.Component {
         this.locationSuccess = this.locationSuccess.bind(this);
     }
     render () {
-        if (this.state.error) return (<NearestError error={this.state.error} retry={this.state.retryError}/>);
+        if (this.state.error) return (<Error error={this.state.error} retry={this.state.retryError} />);
         if (!this.state.nearest) return (<Loading text="Locating nearest plane..."/>);
 
         return (
