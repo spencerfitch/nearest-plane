@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NearestLoading from '../components/NearestLoading';
+import Loading from '../components/loading';
 import NearestError from '../components/NearestError';
 import Map from '../components/Map';
 import PlaneInformation from '../components/PlaneInformation';
@@ -27,7 +27,7 @@ class Nearest extends React.Component {
     }
     render () {
         if (this.state.error) return (<NearestError error={this.state.error} retry={this.state.retryError}/>);
-        if (!this.state.nearest) return (<NearestLoading />);
+        if (!this.state.nearest) return (<Loading text="Locating nearest plane..."/>);
 
         return (
         <div className="bg-light nearest-container">
