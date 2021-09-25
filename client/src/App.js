@@ -4,7 +4,7 @@ import Navigation from './components/navigation';
 import Home from './pages/home';
 import About from './pages/about';
 import Nearest from './pages/nearest';
-import NotFound from './pages/NotFound';
+import NotFound from './pages/404';
 
 const App = () => (
   <Router hashType="slash">
