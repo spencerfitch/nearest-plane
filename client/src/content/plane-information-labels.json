@@ -1,0 +1,70 @@
+{
+  "icao24": {
+    "label": "ICAO 24",
+    "tip": "Unique ICAO 24-bit address of the transponder in hex string representation"
+  }, 
+  "callsign": {
+    "label": "Callsign",
+    "tip": "Callsign of the vehicle (8 chars)"
+  },
+  "squawk": {
+    "label": "Squawk",
+    "tip": "Assigned by air traffic controllers to identify a vehicle over radio"
+  },
+  "origin_country": {
+    "label": "Origin Country",
+    "tip": "Country name inferred from the ICAO 24-bit address"
+  },
+  "longitude": {
+    "label": "Longitude (°)",
+    "tip": "WGS-84 longitude in degrees"
+  },
+  "latitude": {
+    "label": "Latitude (°)",
+    "tip": "WGS-84 latitude in degrees"
+  },
+  "on_ground": {
+    "label": "On Ground",
+    "tip": "Whether the vehicle is currently on the ground"
+  },
+  "baro_altitude": {
+    "label": "Barometric Altitude (m)",
+    "tip": "Determined by measuring surrounding atmospheric pressure"
+  },
+  "geo_altitude": {
+    "label": "Geometric Altitude (m)",
+    "tip": "Determined using specialized electronic equipment like GPS"
+  },
+  "vertical_rate": {
+    "label": "Vertical Rate (m/s)",
+    "tip": "Positive value indicaes that the vehicle is climbing, while a negative value indicates that it is descending"
+  },
+  "velocity": {
+    "label": "Velocity (m/s)",
+    "tip": "Velocity relative to the ground"
+  },
+  "true_track": {
+      "label": "True Track",
+      "tip": "Degrees from North of vehicle's current heading"
+  },
+  "time_position": {
+    "label": "Last Position Update",
+    "tip": "Timestamp of last position update from vehicle"
+  }, 
+  "last_contact": {
+    "label": "Last Contact",
+    "tip": "Timestamp of last contact from vehicle transponder"
+  },
+  "spi": {
+    "label": "Special Purpose",
+    "tip": "Whether flight status is marked with a special prupose indicator"
+  },
+  "sensors": {
+    "label": "Sensors",
+    "tip": "IDs of receivers which were used to gather vehicle information"
+  },
+  "position_source": {
+    "label": "Position Source",
+    "tip": "System used to determine vehicle's position"
+  }
+}
