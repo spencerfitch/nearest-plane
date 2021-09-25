@@ -1,0 +1,19 @@
+.nearest-container {
+    display: flex;
+    flex-direction: column;
+}
+.nearest-map{
+    width: 100%;
+    height: 300px;
+}
+
+
+@media screen and (min-width: 769px) {
+    .nearest-container {
+        flex-direction: row;
+        height: 100%;
+    }
+    .nearest-map{
+        height: 100%;
+    }
+}

@@ -1,9 +1,9 @@
 import {HashRouter as Router, Switch, Route} from 'react-router-dom';
 import './styles/custom_bootstrap.css'
-import Navigation from './components/Navigation';
-import Home from './pages/Home';
+import Navigation from './components/navigation';
+import Home from './pages/home';
 import About from './pages/about';
-import Nearest from './pages/Nearest';
+import Nearest from './pages/nearest';
 import NotFound from './pages/NotFound';
 
 const App = () => (

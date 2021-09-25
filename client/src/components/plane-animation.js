@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaPlane } from 'react-icons/fa';
-import '../styles/PlaneAnimation.css';
+import '../styles/plane-animation.css';
 
 
 
