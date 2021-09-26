@@ -125,9 +125,8 @@ const Nearest = () => {
     <div className="bg-light nearest-container">
       <div className="nearest-map">
         <Map 
-          lat={userLocation.lat}
-          lng={userLocation.lng}
-          plane={nearest}/>
+          user={ userLocation }
+          plane={ nearest }/>
       </div>
       <PlaneInformation plane={nearest} />
     </div>
