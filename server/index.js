@@ -1,9 +1,9 @@
-"use strict";
+import dotenv from 'dotenv';
+import express from 'express';
+import routes from './src/routes';
+import * as middleware from './config/middleware';
 
-require("dotenv").config();
-const env = "" + process.env.NODE_ENV;
-
-const express = require("express");
+dotenv.config();
 const app = express();
 
 const bodyConfig = {
@@ -13,10 +13,8 @@ const bodyConfig = {
 app.use(express.urlencoded(bodyConfig));
 app.use(express.json(bodyConfig));
 
-const middleware = require("./config/middleware");
 app.use(middleware.cors);
 
-const routes = require("./src/routes");
 app.use("", routes);
 
 const PORT = process.env.PORT || 8081;
@@ -24,5 +22,3 @@ app.listen(PORT, () => {
     console.log(`Application listening on PORT: ${PORT}`);
     console.log(`http://localhost:${PORT}`);
 });
-
-module.exports = app;
