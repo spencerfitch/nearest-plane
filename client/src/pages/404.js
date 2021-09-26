@@ -1,6 +1,6 @@
-import {Container} from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import { IconContext } from 'react-icons';
-import {BiErrorAlt} from 'react-icons/bi';
+import { BiErrorAlt } from 'react-icons/bi';
 
 const NotFound = () => (
   <Container fluid className="h-100 d-flex flex-column justify-content-center">

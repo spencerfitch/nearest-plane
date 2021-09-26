@@ -1,5 +1,4 @@
-import React from 'react';
-import { Container,Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import { FaPlane } from 'react-icons/fa';
 
 import '../styles/loading.css'

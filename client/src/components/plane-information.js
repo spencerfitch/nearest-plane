@@ -1,4 +1,4 @@
-import { Container, OverlayTrigger, Tooltip} from 'react-bootstrap';
+import { Container, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import layouts from '../content/plane-information-layouts.json';
 import labels from '../content/plane-information-labels.json';
 

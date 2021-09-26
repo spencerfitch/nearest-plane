@@ -1,4 +1,3 @@
-import React from 'react';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import { IconContext } from 'react-icons';
 import { FaPlane } from 'react-icons/fa';

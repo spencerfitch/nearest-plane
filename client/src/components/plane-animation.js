@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { FaPlane } from 'react-icons/fa';
 import '../styles/plane-animation.css';
 
