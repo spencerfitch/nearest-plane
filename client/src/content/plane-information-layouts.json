@@ -1,0 +1,56 @@
+{
+  "ground": [
+    [
+      "icao24",
+      "callsign",
+      "squawk"
+    ],
+    [
+      "origin_country"
+    ],
+    [
+      "longitude",
+      "latitude"
+    ],
+    [
+      "on_ground",
+      "last_contact"
+    ],
+    [
+      "spi",
+      "sensors",
+      "position_source"
+    ]
+  ],
+  "air": [
+    [
+      "icao24",
+      "callsign",
+      "squawk"
+    ],
+    [
+      "origin_country"
+    ],
+    [
+      "longitude",
+      "latitude"
+    ],
+    [
+      "baro_altitude",
+      "geo_altitude",
+      "vertical_rate"
+    ],
+    [
+      "velocity",
+      "true_track"
+    ],
+    [
+      "last_contact"
+    ], 
+    [
+      "spi",
+      "sensors",
+      "position_source"
+    ]
+  ]
+}
