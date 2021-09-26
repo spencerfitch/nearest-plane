@@ -1,98 +1,137 @@
-import React from 'react';
-
+import { useEffect, useState } from 'react';
 import Loading from '../components/loading';
 import Error from '../components/error';
 import Map from '../components/map';
 import PlaneInformation from '../components/plane-information';
-
 import '../styles/nearest.css';
 
-
 //const baseUrl = "http://localhost:8081/api"
-const baseUrl = 'https://nearest-plane.herokuapp.com/api'
+const baseUrl = 'https://nearest-plane.herokuapp.com/api';
 
-class Nearest extends React.Component {
-    constructor (props) {
-        super(props);
+const geolocationSuccess = ( location, setLocation ) => {
+  setLocation({
+    lat: location.coords.latitude,
+    lng: location.coords.longitude
+  });
+}
 
-        this.state = {
-            lat: null,
-            lng: null,
-            nearest: null,
-            error: null,
-            retryError: false
-        };
+const geolocationFailure = ( error, setError ) => {
+  console.log(error);
+  if (error.code && error.code === 1) {
+    setError({
+      error: (
+        <span>
+          It seems we were denied access to your location.<br/>
+          <span className='fw-light'>
+            You'll need to provide us access to your location to conintue using Nearest Plane.
+          </span>
+        </span>
+      ),
+      retry: false
+    });
 
-        this.locationSuccess = this.locationSuccess.bind(this);
+  } else {
+    setError({
+      error: (
+        <span>
+          We encountered an unexpected error when retreiving your location.<br/>
+          <span className='fw-light'>
+            Trying again might fix the issue.
+          </span>
+        </span>
+      ),
+      retry: true
+    })
+  }  
+}
+
+const geolocationUnsupported = ( setError ) => {
+  setError({
+    error: (
+      <span>
+        Geolocation is not supported by this browser.<br/>
+        Please update your browser settings or use a different browser in order to use Nearest Plane.
+      </span>
+    ),
+    retry: false
+  });
+}
+
+const requestGeoLocation = ( setLocation, setError ) => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (location) => { geolocationSuccess(location, setLocation) },
+      (error) => { geolocationFailure(error, setError) }
+    )
+
+  } else {
+    geolocationUnsupported(setError);
+  }
+}
+
+const getNearestPlane = ( location, setNearest, setError ) => {
+  const fetchRetry = (location, n) => { 
+    // console.log(`Try ${n}`);
+    // Maximum of 3 retry attempts for single request
+    if (n < 3) {
+      fetch(`${baseUrl}/nearest?lat=${location.lat}&lon=${location.lng}`)
+        .then(response => response.json())
+        .then(data => {
+          setNearest( data)
+        })
+        .catch(err => this.fetchRetry(location, n+1));
+
+    } else {
+      setError({
+        error: (
+          <span>
+            We weren't able to retrieve the plane information from our servers.<br/>
+            <span className="fw-light">Trying again might fix the issue.</span>
+          </span>),
+        retryError: true
+      });
     }
-    render () {
-        if (this.state.error) return (<Error error={this.state.error} retry={this.state.retryError} />);
-        if (!this.state.nearest) return (<Loading text="Locating nearest plane..."/>);
+  }
 
-        return (
-        <div className="bg-light nearest-container">
-            <div className="nearest-map">
-                <Map 
-                    lat={this.state.lat}
-                    lng={this.state.lng}
-                    plane={this.state.nearest}/>
-            </div>
-            <PlaneInformation
-                plane={this.state.nearest} />
-        </div>
-        )
+  fetchRetry(location, 0);
+}
+
+const Nearest = () => {
+  const [userLocation, setUserLocation] = useState({
+    lat: null,
+    lng: null
+  });
+  const [nearest, setNearest] = useState();
+  const [error, setError] = useState({
+    error: null,
+    retry: false
+  });
+
+  useEffect(() => {
+    requestGeoLocation(setUserLocation, setError);
+  }, []);
+
+  useEffect(() => {
+    if (userLocation.lat && userLocation.lng) {
+      getNearestPlane( userLocation, setNearest, setError);
     }
+  }, [userLocation]);
 
-    componentDidMount () {
-        this.requestGeolocation()
-    }
 
-    requestGeolocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(this.locationSuccess, 
-                (err) => {
-                    console.log(err);
-                    this.setState({
-                        error: (<span>We encountered an unexpected error when retreiving your location.<br/><span className='fw-light'>Trying again might fix the issue.</span></span>),
-                        retryError: true
+  if (error.error) return <Error error={error.error} retry={error.retry} />
+  if (!nearest) return <Loading text="Locating nearest plane..."/>
 
-                    })
-                });
-        } else {
-            this.setState({
-                error: <span>Geolocation is not supported by this browser.<br/>Please update your browser settings or use a different browser in order to use Nearest Plane.</span>,
-                retry: false
-            })
-        }
-    }
-
-    locationSuccess (position) {
-        this.fetchRetry(position, 0);
-    }
-
-    fetchRetry (position, n) {
-        console.log(`Try ${n}`);
-        // Maximum of 3 retry attempts for single request
-        if (n >= 3) {
-            this.setState({
-                error: (<span>We weren't able to retrieve the plane information from our servers.<br/><span className="fw-light">Trying again might fix the issue.</span></span>),
-                retryError: true
-            })
-            return;
-        }
-
-        fetch(`${baseUrl}/nearest?lat=${position.coords.latitude}&lon=${position.coords.longitude}`)
-            .then(response => response.json())
-            .then(data => {
-                this.setState({
-                    error: null,
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude,
-                    nearest: data
-                })
-            })
-            .catch(err => this.fetchRetry(position, n+1))
-    }
+  return (
+    <div className="bg-light nearest-container">
+      <div className="nearest-map">
+        <Map 
+          lat={userLocation.lat}
+          lng={userLocation.lng}
+          plane={nearest}/>
+      </div>
+      <PlaneInformation plane={nearest} />
+    </div>
+  )
 }
 
 export default Nearest;
